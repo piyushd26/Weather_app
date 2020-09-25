@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/activitymain_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.weather_app.view.activities.MainActivity">
+
+
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/WD_pb"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+        android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true"
+
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
+        android:layout_height="wrap_content">
+
+
+       <LinearLayout
+           android:weightSum="10"
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="610dp">
+           <LinearLayout
+               android:layout_weight="8"
+               android:weightSum="10"
+               android:orientation="horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <androidx.appcompat.widget.AppCompatTextView
+                   android:layout_width="wrap_content"
+                   android:text="--"
+                   android:fontFamily="@font/lemonmilk_bold"
+                   android:id="@+id/des"
+                   android:textColor="@color/white"
+                   android:layout_marginStart="25dp"
+                   android:gravity="left|bottom"
+                   android:textSize="14dp"
+                   android:layout_height="match_parent"/>
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_weight="2"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <androidx.appcompat.widget.AppCompatTextView
+                   android:id="@+id/temp"
+                   android:layout_width="match_parent"
+                   android:text="--"
+                   android:layout_marginEnd="25dp"
+                   android:textColor="@color/white"
+                   android:layout_marginStart="25dp"
+                   android:textSize="60dp"
+                   android:fontFamily="@font/lemonmilk_light"
+                   android:gravity="left|top"
+
+                   android:layout_height="match_parent"/>
+           </LinearLayout>
+       </LinearLayout>
+
+    </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_corners"
+        android:layout_height="match_parent"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrainrslayouts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/current_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="left|bottom"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/locationname"
+                app:layout_constraintStart_toEndOf="@+id/locationname"
+                app:layout_constraintTop_toTopOf="@+id/locationname" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/locationname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="43dp"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:gravity="start"
+                android:paddingLeft="28dp"
+                android:text="--"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/current_icon"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/wind"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="--"
+                app:layout_constraintEnd_toStartOf="@+id/humidity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lat" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/humidity"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="--"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/wind"
+                app:layout_constraintTop_toBottomOf="@+id/lng">
+
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pressure"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+
+                android:text="--"
+                app:layout_constraintEnd_toStartOf="@+id/uvi"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wind" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uvi"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="--"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/pressure"
+                app:layout_constraintTop_toBottomOf="@+id/humidity" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lat"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="5"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="--"
+                app:layout_constraintEnd_toStartOf="@+id/lng"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hourlyrv" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_dailyy"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/locationname" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/linechartview"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView_dailyy" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lng"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_weight="5"
+                android:background="@drawable/backgroundforcardaview"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="--"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/lat"
+                app:layout_constraintTop_toTopOf="@+id/lat" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hourlyrv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linechartview" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:backgroundTint="@color/white"
+        android:clickable="true"
+        android:src="@drawable/add_floatin"
+        app:layout_anchor="@id/temp"
+        app:layout_anchorGravity="bottom|right|end"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

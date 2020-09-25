@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#00ff0000</item>
+        <item name="colorPrimaryDark">#80000000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+    <array name="myImages">
+        <item>R.mipmap.deernew</item>
+        <item>R.mipmap.night</item>
+
+    </array>
+
+</resources>
